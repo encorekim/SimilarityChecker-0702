@@ -11,11 +11,16 @@ class LengthFixture : public testing::Test {
 };
 
 TEST_F(LengthFixture, SameLength) {
-  int actual = length.getLengthScore("AAA", "BBB");
+  double actual = length.getLengthScore("AAA", "BBB");
   EXPECT_EQ(60, actual);
 }
 
 TEST_F(LengthFixture, DoubleLength) {
-  int actual = length.getLengthScore("AAA", "BBBBBB");
+  double actual = length.getLengthScore("AAA", "BBBBBB");
   EXPECT_EQ(0, actual);
+}
+
+TEST_F(LengthFixture, CommonLength1) {
+  double actual = length.getLengthScore("AAAAAA", "BBBB");
+  EXPECT_EQ(30, actual);
 }
