@@ -7,7 +7,12 @@
 
 using std::string;
 
-TEST(AlphaTest, ZeroLengthInput) {
+TEST(AlphaTest, ZeroLengthInputs) {
   AlphabetChecker alpha;
-  EXPECT_THROW(alpha.getAlphabetScore("A", ""), std::invalid_argument);
+  EXPECT_THROW(alpha.getAlphabetScore("", ""), std::invalid_argument);
+}
+
+TEST(AlphaTest, ZeroAndNonZero) {
+  AlphabetChecker alpha;
+  EXPECT_EQ(0, alpha.getAlphabetScore("A", ""));
 }
