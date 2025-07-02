@@ -1,17 +1,21 @@
+#include "length.cpp";
+
 #include <gmock/gmock.h>
 #include <string.h>
 
-#include "length.cpp";
-
 using std::string;
 
-TEST(LengthTest, SameLength) { LengthChecker length;
+class LengthFixture : public testing::Test {
+ public:
+  LengthChecker length;
+};
+
+TEST_F(LengthFixture, SameLength) {
   int actual = length.getLengthScore("AAA", "BBB");
   EXPECT_EQ(60, actual);
 }
 
-TEST(LengthTest, DoubleLength) {
-  LengthChecker length;
+TEST_F(LengthFixture, DoubleLength) {
   int actual = length.getLengthScore("AAA", "BBBBBB");
   EXPECT_EQ(0, actual);
 }
