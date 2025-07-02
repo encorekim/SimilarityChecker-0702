@@ -6,6 +6,6 @@
 using std::string;
 
 TEST(LengthTest, SameLength) { LengthChecker length;
-  int actual = length.getScore("AAA", "BBB");
+  int actual = length.getLengthScore("AAA", "BBB");
   EXPECT_EQ(60, actual);
 }

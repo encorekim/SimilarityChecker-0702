@@ -4,5 +4,9 @@ using std::string;
 
 class LengthChecker {
  public:
-  int getScore(const string& A, const string& B) { return 60; }
+  int getLengthScore(const string& wordA, const string& wordB) {
+    if (wordA.size() == wordB.size()) {
+      return 60;
+    }
+  }
 };
