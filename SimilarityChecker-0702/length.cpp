@@ -7,6 +7,7 @@ class LengthChecker {
   int getLengthScore(const string& wordA, const string& wordB) {
     if (wordA.size() == wordB.size()) {
       return 60;
-    }
+    } 
+    return 0;
   }
 };
