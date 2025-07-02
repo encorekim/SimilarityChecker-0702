@@ -24,3 +24,8 @@ TEST_F(LengthFixture, CommonLength1) {
   double actual = length.getLengthScore("AAAAAA", "BBBB");
   EXPECT_EQ(30, actual);
 }
+
+TEST_F(LengthFixture, CommonLength2) {
+  double actual = length.getLengthScore("AAAAA", "BBBB");
+  EXPECT_EQ(45, actual);
+}
