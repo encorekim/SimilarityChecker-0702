@@ -5,7 +5,6 @@ using std::string;
 class LengthChecker {
  public:
   double getLengthScore(const string& wordA, const string& wordB) {
-    bool retFlag;
     if (isDoubleLength(wordA, wordB)) {
       return 0;
     }
@@ -13,6 +12,8 @@ class LengthChecker {
   }
 
  private:
+  int maxScore = 60;
+
   bool isDoubleLength(const std::string& wordA, const std::string& wordB) {
     if (wordA.size() >= 2 * wordB.size() || wordB.size() >= 2 * wordA.size()) {
       return true;
@@ -39,6 +40,6 @@ class LengthChecker {
                               const std::string& wordB) {
     int gap = calculateGap(wordA, wordB);
     int shorter = calculageShorter(wordA, wordB);
-    return (1 - ((double)gap / (double)shorter)) * 60;
+    return (1 - ((double)gap / (double)shorter)) * maxScore;
   }
 };
