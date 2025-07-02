@@ -13,6 +13,8 @@ class AlphabetChecker {
     if (wordA.size() == 0 || wordB.size() == 0) {
       return 0;
     }
+
+    return 0;
   }
 
   private:

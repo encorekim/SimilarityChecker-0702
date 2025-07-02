@@ -7,12 +7,15 @@
 
 using std::string;
 
-TEST(AlphaTest, ZeroLengthInputs) {
+class AlphaFixture : public testing::Test {
+ public:
   AlphabetChecker alpha;
+};
+
+TEST_F(AlphaFixture, ZeroLengthInputs) {
   EXPECT_THROW(alpha.getAlphabetScore("", ""), std::invalid_argument);
 }
 
-TEST(AlphaTest, ZeroAndNonZero) {
-  AlphabetChecker alpha;
+TEST_F(AlphaFixture, ZeroAndNonZero) {
   EXPECT_EQ(0, alpha.getAlphabetScore("A", ""));
 }
